@@ -1,8 +1,16 @@
-<html>
-	<head>
-        <title>Start blog</title>
-    </head>
+{% extends "layout.html" %}
 
-    <p>Hi there!</p>
-    <p>It works!</p>
-</html>
+{% block title %}Available Projects{% endblock %}
+
+{% block content %}
+<div class="container">
+    {% for post in posts %}
+    <div class="container">
+        <header><a href="{% url 'projects:detail' pk=post.pk %}">{{ post.title }}</a></header>
+        <div>
+            {{ post.author }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include('blog.urls')),
+    url(r'^projects/', include('blog.urls', namespace='projects')),
+    url(r'^$', views.home, name="home"),
+    url(r'^about_me', views.about_me, name="about_me"),
+    url(r'^contact', views.contact, name="contact"),
+    #url(r'', include('blog.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
