@@ -1,14 +1,18 @@
 {% extends "layout.html" %}
 
-{% block title %}Available Projects{% endblock %}
+{% block title %}Projects{% endblock %}
 
 {% block content %}
+<h2>Blog</h2>
+<h3>Detailing the various programming hurdles I've had to deal with</h3>
 <div class="container">
+	
     {% for post in posts %}
     <div class="container">
-        <header><a href="{% url 'projects:detail' pk=post.pk %}">{{ post.title }}</a></header>
+    	
+        <header><a href="{% url 'blog:detail' pk=post.pk %}">{{ post.title }}</a></header>
         <div>
-            {{ post.author }}
+            {{ post.text }}
         </div>
     </div>
     {% endfor %}

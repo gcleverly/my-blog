@@ -8,12 +8,14 @@
     {{ post.author }}
     
     <section>
-        <!--{% for step in course.step_set.all %}
-            <h3>
-                <a href="{% url 'courses:step' course_pk=step.course.pk step_pk=step.pk %}">{{ step.title }}</a>
-            </h3>
-            {{ step.description }}
-        {% endfor %}-->
+        
+        <h3>
+            {{ post.title}}
+        </h3>
+
+        {{ post.body_html|safe }}
+     
+
     </section>
 </article>
 {% endblock %}

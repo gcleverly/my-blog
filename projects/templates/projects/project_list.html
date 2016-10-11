@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<h2>Welcome to my projects page. Take a look at what I have been working on.</h2>
+<div class="container">
+	
+    {% for project in projects %}
+    <div class="container">
+    	
+    	<!--<img src="{{ MEDIA_URL }}images/{{ post.image.url }}" alt="image" />-->
+    	
+    	<img src="{{ project.image.url }}" alt="image" />
+    	<!--<img src='{{ post.image.url }}'/>-->
+        <header><a href="{% url 'projects:detail' pk=project.pk %}">{{ project.title }}</a></header>
+        <div>
+            {{ project.text }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
