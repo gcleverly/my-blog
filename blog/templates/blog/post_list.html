@@ -1,20 +1,21 @@
 {% extends "layout.html" %}
 
-{% block title %}Projects{% endblock %}
+{% block title %}Blog Posts{% endblock %}
 
 {% block content %}
-<h2>Blog</h2>
-<h3>Detailing the various programming hurdles I've had to deal with</h3>
-<div class="container">
-	
+<header class='page-header'>
+<h2>Blog Posts</h2>
+<h5>Detailing the various programming hurdles I've had to deal with</h5>
+</header>
+
     {% for post in posts %}
-    <div class="container">
+        <section id="content" class="body">
     	
-        <header><a href="{% url 'blog:detail' pk=post.pk %}">{{ post.title }}</a></header>
-        <div>
-            {{ post.text }}
-        </div>
-    </div>
+            <dt><a href="{% url 'blog:detail' pk=post.pk %}">{{ post.title }} - {{ post.date }}</a></dt>
+            <dd>{{ post.subject }}</span></dd>
+
+        </section>
     {% endfor %}
+<div class="col-sm-9">
 </div>
 {% endblock %}

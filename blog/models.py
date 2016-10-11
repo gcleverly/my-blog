@@ -26,6 +26,7 @@ class Image( models.Model ):
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
+    date = models.DateField(default=datetime.date.today)
     title = models.CharField(default ='',max_length=255)
     subject = models.CharField(default='',max_length=255)
     body = models.TextField(default='')

@@ -24,9 +24,9 @@ print("base dir path", BASE_DIR)
 SECRET_KEY = '2g*29+j4asly^3r(fh$vnw*0imo1o&8hqvpl-(wrgroc2$6my3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['gcleverly.pythonanywhere.com']
 
 
 # Application definition

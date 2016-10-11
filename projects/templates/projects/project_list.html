@@ -3,21 +3,34 @@
 {% block title %}Projects{% endblock %}
 
 {% block content %}
-<h2>Welcome to my projects page. Take a look at what I have been working on.</h2>
+<header class='page-header'>
+<h2>Welcome to my Projects Page.</h2>
+
+<p>I am using this webpage to showcase some of the projects I'm working on right now! Take a look around and explore the data!</p>
+
+</header>
 <div class="container">
-	
-    {% for project in projects %}
-    <div class="container">
-    	
-    	<!--<img src="{{ MEDIA_URL }}images/{{ post.image.url }}" alt="image" />-->
-    	
-    	<img src="{{ project.image.url }}" alt="image" />
-    	<!--<img src='{{ post.image.url }}'/>-->
-        <header><a href="{% url 'projects:detail' pk=project.pk %}">{{ project.title }}</a></header>
-        <div>
-            {{ project.text }}
+    
+        <div class="row">
+            <div class="col-sm-9">
+                {% for project in projects %}         	
+                     <article>
+                            <p>
+                                <a href="{% url 'projects:detail' pk=project.pk %}">
+                                    <img class = "thumbnail" src="{{ project.image.url }}" alt="image" width="275" height="183" border="0"/>
+                                </a>
+                            </p>
+                            <h3>
+                                <a href="{% url 'projects:detail' pk=project.pk %}">{{ project.title }}</a>
+                                <span aria-hidden="true" class="octicon octicon-link"></span>
+                            </h3>
+
+                            <p class="anchor">{{ project.text }}</p>
+                            <a class="btn btn-default btn-xs" href="{% url 'projects:detail' pk=project.pk %}">More ...</a>
+                            <hr>
+                    </article>
+                {% endfor %}
+            </div>
         </div>
-    </div>
-    {% endfor %}
 </div>
 {% endblock %}
