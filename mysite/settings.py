@@ -24,7 +24,7 @@ print("base dir path", BASE_DIR)
 SECRET_KEY = '2g*29+j4asly^3r(fh$vnw*0imo1o&8hqvpl-(wrgroc2$6my3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['gcleverly.pythonanywhere.com']
 
@@ -126,7 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = (
 	os.path.join(BASE_DIR,'assets'),
 	)
-MEDIA_ROOT=os.path.join(BASE_DIR,'assets') #(i.e: '/home/ike/project/media/')
+MEDIA_ROOT=os.path.join(BASE_DIR,'assets') 
 MEDIA_URL='/assets/'
 
 

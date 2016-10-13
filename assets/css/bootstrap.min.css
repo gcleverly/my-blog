@@ -1414,18 +1414,75 @@ html {
     src: url("../fonts/PONTIAC_LIGHT.otf") format("opentype");
 }
 
+.col-centered {
+    display: inline-block;
+    float:none;
+    margin-right: -4px;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.about {
+    width: 600px
+}
+
+.field {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+.field dd{
+    margin-bottom: 20px;
+}
+.wrap{
+    padding: 0;
+}
+.bio {
+    margin-bottom: 120px;
+    position: relative;
+    width:480px;
+    text-align: center;
+}
+
+.leftside {
+    position=relative;
+    float=center;
+    width:480px;
+}
+.rightside {
+    position=relative;
+    float:center;
+    width: 480px;
+}
 .frontpage {
     font-size: 1.7em;
     text-align: center;
     margin: 300px auto;
     color: white;
 }
-
-.frontpage a {
+.block {
+    width: 460px;
+    padding-right: 30px;
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+    float: left;
+}
+.frontpage span {
     font-size: 1.7em;
     font-family: 'PONTIAC_LIGHT', sans-serif;
     letter-spacing: 8px;
-    text-align: center;
+    text-align: center;    
+}
+
+.frontpage a {
     color: white;
 }
 
@@ -2533,6 +2590,7 @@ pre code {
         width: 58.33333333%
     }
     .col-md-6 {
+        text-align: left;
         width: 50%
     }
     .col-md-5 {
@@ -7156,7 +7214,11 @@ button.close {
 
 .modal-body {
     position: relative;
-    padding: 15px
+    padding: 15px;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
 }
 
 .modal-footer {

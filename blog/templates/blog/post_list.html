@@ -7,15 +7,19 @@
 <h2>Blog Posts</h2>
 <h5>Detailing the various programming hurdles I've had to deal with</h5>
 </header>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            {% for post in posts %}
+                <article>
+            	
+                    <dt><a href="{% url 'blog:detail' pk=post.pk %}">{{ post.title }} - {{ post.date }}</a></dt>
+                    <dd>{{ post.subject }}</span></dd>
 
-    {% for post in posts %}
-        <section id="content" class="body">
-    	
-            <dt><a href="{% url 'blog:detail' pk=post.pk %}">{{ post.title }} - {{ post.date }}</a></dt>
-            <dd>{{ post.subject }}</span></dd>
-
-        </section>
-    {% endfor %}
-<div class="col-sm-9">
+                </article>
+            {% endfor %}
+        </div>
+    </div>
 </div>
+
 {% endblock %}

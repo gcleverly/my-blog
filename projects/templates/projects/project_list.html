@@ -5,32 +5,29 @@
 {% block content %}
 <header class='page-header'>
 <h2>Welcome to my Projects Page.</h2>
-
-<p>I am using this webpage to showcase some of the projects I'm working on right now! Take a look around and explore the data!</p>
-
+<p>I am using this webpage to showcase some of the projects I'm working on right now. Take a look around and explore!</p>
 </header>
 <div class="container">
-    
-        <div class="row">
-            <div class="col-sm-9">
-                {% for project in projects %}         	
-                     <article>
-                            <p>
-                                <a href="{% url 'projects:detail' pk=project.pk %}">
-                                    <img class = "thumbnail" src="{{ project.image.url }}" alt="image" width="275" height="183" border="0"/>
-                                </a>
-                            </p>
-                            <h3>
-                                <a href="{% url 'projects:detail' pk=project.pk %}">{{ project.title }}</a>
-                                <span aria-hidden="true" class="octicon octicon-link"></span>
-                            </h3>
+    <div class="row">
+        <div class="col-sm-9">
+            {% for project in projects %}         	
+                 <article>
+                        <p>
+                            <a href="{% url 'projects:detail' pk=project.pk %}">
+                                <img class = "thumbnail" src="{{ project.thumbnail.url }}" alt="Project_thumbnail" width="275" height="183" border="0"/>
+                            </a>
+                        </p>
+                        <h3>
+                            <a href="{% url 'projects:detail' pk=project.pk %}">{{ project.title }}</a>
+                            <span aria-hidden="true" class="octicon octicon-link"></span>
+                        </h3>
 
-                            <p class="anchor">{{ project.text }}</p>
-                            <a class="btn btn-default btn-xs" href="{% url 'projects:detail' pk=project.pk %}">More ...</a>
-                            <hr>
-                    </article>
-                {% endfor %}
-            </div>
+                        <p class="anchor">{{ project.subject }}</p>
+                        <a class="btn btn-default btn-xs" href="{% url 'projects:detail' pk=project.pk %}">More ...</a>
+                        <hr>
+                </article>
+            {% endfor %}
         </div>
+    </div>
 </div>
 {% endblock %}
