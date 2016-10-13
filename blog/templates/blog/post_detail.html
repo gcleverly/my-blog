@@ -3,19 +3,13 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-<article>
-    <h2>{{ post.title }}</h2>
-    {{ post.author }}
+<div class="skinny-read">
+    <h3>{{ post.title }} - {{ post.date }}</h3>
     
     <section>
         
-        <h3>
-            {{ post.title}}
-        </h3>
-
         {{ post.body_html|safe }}
      
-
     </section>
-</article>
+</div>
 {% endblock %}

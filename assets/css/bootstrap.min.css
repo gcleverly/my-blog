@@ -1467,6 +1467,14 @@ html {
     margin: 300px auto;
     color: white;
 }
+.skinny-read {
+    margin: 0 auto;
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 65.88078%;
+    margin-left: 17.05961%;
+}
 .block {
     width: 460px;
     padding-right: 30px;
