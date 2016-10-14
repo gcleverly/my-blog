@@ -12,10 +12,8 @@
         <div class="col-sm-9">
             {% for post in posts %}
                 <article>
-            	
                     <dt><a href="{% url 'blog:detail' pk=post.pk %}">{{ post.title }} - {{ post.date }}</a></dt>
-                    <dd>{{ post.subject }}</span></dd>
-
+                    <dd>{{ post.subject }}</dd>
                 </article>
             {% endfor %}
         </div>

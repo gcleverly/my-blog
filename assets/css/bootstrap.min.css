@@ -28,6 +28,7 @@ body {
 article {
     word-wrap: break-word;
     width: 500px;
+    margin-bottom: 20px;
 }
 
 ,
@@ -1573,7 +1574,11 @@ hr {
     border: 0;
     border-top: 1px solid #eee
 }
-
+.hd {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 0;
+}
 .sr-only {
     position: absolute;
     width: 1px;
