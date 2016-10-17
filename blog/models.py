@@ -17,6 +17,20 @@ def markdown_to_html( markdownText, images ):
 
     return html
 
+#def markdown_to_html(markdownText, images):
+ #   # create instance of Markdown class (note capital "M")
+  #  md = markdown.Markdown()
+#
+ #   for image in images:
+  #      image_url = settings.MEDIA_URL + image.image.url
+#
+ #       # append image reference to Markdown instance
+  #      # md.reference[id] = (url, title)
+   #     md.references[image.name] = (image_url, '')
+#
+ #   # parse source text
+  #  return md.convert(markdownText)   
+
 class Image( models.Model ):
     name = models.CharField( max_length=100 )
     image = models.ImageField( upload_to="images" )
