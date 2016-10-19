@@ -5,9 +5,33 @@
  */
 
 body {
-    padding-top: 30px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
 footer {
     margin: 50px 0;
+}
+.frontpage {
+    font-size: 1.7em;
+    text-align: center;
+    margin: 300px auto;
+    color: white;
+}
+.frontpage span {
+    font-size: 1.7em;
+    font-family: 'PONTIAC_LIGHT', sans-serif;
+    letter-spacing: 8px;
+    text-align: center;
+}
+
+.frontpage a {
+    color: white;
+}
+
+.frontpage h1 {
+    font-family: 'PONTIAC_BLACK', sans-serif;
+    font-size: 3.2em;
+    text-align: center;
+    letter-spacing: 8px;
+    color: WHITE;
 }
