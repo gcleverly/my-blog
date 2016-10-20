@@ -5,61 +5,63 @@
 
 
 {% block content %}
-<header class='page-header'>
-<h2>About Me</h2>
-
-</header>
 
 
-<div class="row row-centered">
-	<h1 align>Griffin Cleverly</h1>
-	<div class="about col-centered">
-		<img src="{% static 'images/me.jpg' %}" ALT="ME" WIDTH=200 HEIGHT=250>
-		<p>
-			Hi! My name is Griffin Cleverly. I'm a Mechanical Engineer turned software developer living in Los Angeles. When I'm not coding, you might find me surfing, hiking, or rooting for UCLA sports teams. I like to travel and enjoy talking about everything from the news to the 
-			latest movies. When it comes to coding, I like to focus on projects that use Python, especially if they involve data or web development. 
-			Take a look at my site and let's get in contact!
-		</p>
-	</div>
+
+<div class="row">
+    <div class="col-lg-4">
+        <img src="{% static 'images/me.jpg' %}" ALT="ME" WIDTH=200 HEIGHT=250 class="center-block">
+    </div>
+    <div class="col-lg-8">
+        <h1 class="aboutme">Griffin Cleverly</h1>
+        </br>
+        <p class="aboutm">
+            Hi! My name is Griffin Cleverly. I'm a Mechanical Engineer turned software developer living in Los Angeles. When I'm not coding, you might find me surfing, hiking, or rooting for UCLA sports teams. I like to travel and enjoy talking about everything from the news to the
+            latest movies. When it comes to coding, I like to focus on projects that use Python, especially if they involve data or web development.
+            Take a look at my site and let's get in contact!
+        </p>
+        <hr>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+        There will be other important things in here when I can think of what to put
+
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+        <h4>EDUCATION</h4>
+        <dl class="field">
+            <dt>University of California, Los Angeles</dt>
+            <dd>B.S. Mechanical Engineering</dd>
+        </dl>
+        </br>
+        <h4>EXPERIENCE</h4>
+        <dl class="field">
+            <dt>Proposal Design Engineer</dt>
+            <dd>Thermal Engineering International</dd>
+            <dt>Magzor Robotics</dt>
+            <dd>Mechanical Engineering Intern</dd>
+        </dl>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+        <h4>CAPABILITIES</h4>
+        <dt>Web Development</dt>
+        <dd>CSS</dd>
+        <dd>HTML</dd>
+        <dd>Javascript</dd>
+        <dd>Django</dd>
+        <dt>Languages</dt>
+        <dd>Python<dd>
+        <dd>Java<dd>
+        <dd>C++<dd>
+        <dd>Matlab<dd>
+        <dt>Databases</dt>
+        <dd>MySQL<dd>
+        <dd>MongoDB<dd>
+    </div>
+
 </div>
-
-
-<div class="modal-body">
-  <div class="block col-centered">
-  	
-	    <h4>EDUCATION</h4>
-	    <dl class="field">
-	    <dt>University of California, Los Angeles</dt>
-	    <dd>B.S. Mechanical Engineering</dd>
-		</dl>
-		</br>
-	    <h4>EXPERIENCE</h4>
-	    <dl class="field">
-	    <dt>Proposal Design Engineer</dt>
-	    <dd>Thermal Engineering International</dd>
-	    <dt>Magzor Robotics</dt>
-	    <dd>Mechanical Engineering Intern</dd>
-		</dl>
-  </div>
-  <div class="block col-centered">
-  
-    <h4>CAPABILITIES</h4>
-    <dt>Web Development</dt>
-    <dd>CSS</dd>
-    <dd>HTML</dd>
-    <dd>Javascript</dd>
-    <dd>Django</dd>
-    <dt>Languages</dt>
-    <dd>Python<dd>
-    <dd>Java<dd>
-	<dd>C++<dd>
-	<dd>Matlab<dd>    	
-    <dt>Databases</dt>
-    <dd>MySQL<dd>
-    <dd>MongoDB<dd>
-  </div>
-</div>
-
 {% endblock content %}
+
 
 

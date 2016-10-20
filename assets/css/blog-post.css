@@ -35,3 +35,22 @@ footer {
     letter-spacing: 8px;
     color: WHITE;
 }
+.social-icon {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  color: #777;
+}
+.aboutme {
+    font-family: 'PONTIAC_BLACK', sans-serif;
+    font-size: 3.2em;
+    letter-spacing: 8px;
+}
+.aboutm {
+    font-family: 'PONTIAC_BLACK', sans-serif;
+    font-size: 1.4em;
+    letter-spacing: 0px;
+}
+.aboutpic {
+    vertical-align:middle;
+}
