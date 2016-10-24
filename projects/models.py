@@ -32,6 +32,9 @@ class Project(models.Model):
     body = models.TextField(default='')
     images = models.ManyToManyField( Image, blank=True)
 
+    def get_absolute_url(self):
+        return "/projects/{}".format(self.id)
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
