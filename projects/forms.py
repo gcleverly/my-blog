@@ -7,7 +7,7 @@ from .models import Project
 
 class ProjectForm(forms.ModelForm):
     body = forms.CharField(widget=PagedownWidget)
-    publish = forms.DateField(widget=forms.SelectDateWidget)
+    #publish = forms.DateField(widget=forms.SelectDateWidget)
     class Meta:
         model = Project
         fields = [

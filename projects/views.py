@@ -2,19 +2,20 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.contrib import messages
 
-
 from .models import Project
 from .forms import ProjectForm
+
 
 def project_create(request):
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
     form = ProjectForm(request.POST or None)
     if form.is_valid():
+        print("good form")
         instance = form.save(commit=False)
         instance.save()
         return HttpResponseRedirect(instance.get_absolute_url())
-
+    print("bad form")
     context = {
         "form":form,
     }
@@ -22,8 +23,8 @@ def project_create(request):
 
 
 def project_detail(request,pk):
-	project = get_object_or_404(Project,pk=pk)
-	return render(request,'projects/project_detail.html',{'project':project})
+    project = get_object_or_404(Project,pk=pk)
+    return render(request,'projects/project_detail.html',{'project':project})
 
 
 def project_delete(request, pk):

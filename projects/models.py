@@ -5,12 +5,12 @@ from django.db import models
 from django.utils import timezone
 from django.conf import settings
 
-def markdown_to_html( markdownText, images ):    
+def markdown_to_html( markdownText): #, images ):
     image_ref = ""
 
-    for image in images:
-        image_url = settings.MEDIA_URL + image.image.url
-        image_ref = "%s\n[%s]: %s" % ( image_ref, image, image_url )
+    #for image in images:
+    #    image_url = settings.MEDIA_URL + image.image.url
+    #    image_ref = "%s\n[%s]: %s" % ( image_ref, image, image_url )
 
     md = "%s\n%s" % ( markdownText, image_ref )
     html = markdown.markdown( md )
@@ -28,9 +28,9 @@ class Project(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(default ='',max_length=255)
     subject = models.CharField(default='',max_length=255)
-    thumbnail = models.ImageField(upload_to="images")
+    thumbnail = models.ImageField(upload_to="images", default="images/question.jpg")
     body = models.TextField(default='')
-    images = models.ManyToManyField( Image, blank=True)
+
 
     def get_absolute_url(self):
         return "/projects/{}".format(self.id)
@@ -43,4 +43,4 @@ class Project(models.Model):
         return self.title
 
     def body_html( self ):
-        return markdown_to_html( self.body, self.images.all() )
+        return markdown_to_html( self.body) # self.images.all() )
