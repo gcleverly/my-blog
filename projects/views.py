@@ -11,11 +11,9 @@ def project_create(request):
         raise Http404
     form = ProjectForm(request.POST or None)
     if form.is_valid():
-        print("good form")
         instance = form.save(commit=False)
         instance.save()
         return HttpResponseRedirect(instance.get_absolute_url())
-    print("bad form")
     context = {
         "form":form,
     }
