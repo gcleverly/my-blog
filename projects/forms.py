@@ -10,10 +10,10 @@ class ProjectForm(forms.ModelForm):
     #publish = forms.DateField(widget=forms.SelectDateWidget)
     class Meta:
         model = Project
-        fields = [
+        fields = (
             "title",
             "author",
             "subject",
             "body",
             "thumbnail",
-        ]
+        )

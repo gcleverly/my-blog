@@ -28,9 +28,7 @@ class Project(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(default ='',max_length=255)
     subject = models.CharField(default='',max_length=255)
-    thumbnail = models.ImageField(upload_to="home/gcleverly/my-blog/assets/images",
-                                  default="home/gcleverly/my-blog/assets/images/question.jpg"
-                                  )
+    thumbnail = models.ImageField(upload_to="images", default='images/question.jpg') #, null=True, blank=True, )
     body = models.TextField(default='')
 
 

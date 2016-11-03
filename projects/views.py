@@ -7,17 +7,24 @@ from .forms import ProjectForm
 
 
 def project_create(request):
+    print("Files request:", request.FILES)
+    print("Files post:", request.POST)
+
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
-    form = ProjectForm(request.POST or None)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return HttpResponseRedirect(instance.get_absolute_url())
-    context = {
-        "form":form,
-    }
-    return render(request, "projects/project_form.html", context)
+    if request.method == 'POST':
+
+
+        form = ProjectForm(request.POST,request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            return HttpResponseRedirect(instance.get_absolute_url())
+
+        context = {
+            "form":form,
+        }
+        return render(request, "projects/project_form.html", context)
 
 
 def project_detail(request,pk):
@@ -39,20 +46,35 @@ def project_list(request):
 
 
 def project_update(request, pk):
+    print("Files request:", request.FILES)
+    print("Files post:", request.POST)
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
     instance = get_object_or_404(Project, pk=pk)
+
     form = ProjectForm(request.POST or None, instance=instance)
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        #message success
-        return HttpResponseRedirect(instance.get_absolute_url())
+
+    if request.method == 'POST':
+
+        form = ProjectForm(request.POST, request.FILES,instance=instance)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            instance.save()
+            return HttpResponseRedirect(instance.get_absolute_url())
 
     context = {
         "form": form,
         "title": instance.title,
-        "instance":instance,
-    }
+        "instance": instance,
+        }
     return render(request, 'projects/project_form.html', context)
+
+    #form = ProjectForm(request.POST or None, instance=instance)
+    #if form.is_valid():
+    #    instance = form.save(commit=False)
+     #   instance.save()
+        #message success
+      #  return HttpResponseRedirect(instance.get_absolute_url())
+
+
 
