@@ -28,7 +28,10 @@ def project_create(request):
             "form":form,
         }
         return render(request, "projects/project_form.html", context)
-
+    context = {
+        "form": form,
+    }
+    return render(request, "projects/project_form.html", context)
 
 def project_detail(request,pk):
     project = get_object_or_404(Project,pk=pk)
