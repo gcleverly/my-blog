@@ -12,6 +12,9 @@ def project_create(request):
 
     if not request.user.is_staff or not request.user.is_superuser:
         raise Http404
+
+    form = ProjectForm(request.POST or None)
+
     if request.method == 'POST':
 
 
