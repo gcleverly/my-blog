@@ -30,7 +30,10 @@ class Project(models.Model):
     subject = models.CharField(default='',max_length=255)
     thumbnail = models.ImageField(upload_to="images", default='images/question.jpg') #, null=True, blank=True, )
     body = models.TextField(default='')
+    order = models.IntegerField(default=0)
 
+    class Meta:
+        ordering = ['order']
 
     def get_absolute_url(self):
         return "/projects/{}".format(self.id)

@@ -16,4 +16,5 @@ class ProjectForm(forms.ModelForm):
             "subject",
             "body",
             "thumbnail",
+            "order",
         )
