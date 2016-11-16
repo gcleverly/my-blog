@@ -26,7 +26,7 @@ SECRET_KEY = '2g*29+j4asly^3r(fh$vnw*0imo1o&8hqvpl-(wrgroc2$6my3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['gcleverly.pythonanywhere.com']
+ALLOWED_HOSTS = ['gcleverly.pythonanywhere.com','www.griffincleverly.com','webapp-224030.pythonanywhere.com']
 
 
 # Application definition
